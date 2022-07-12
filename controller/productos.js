@@ -1,59 +1,28 @@
 const { response } = require('express');
 
 const crearProducto = async (req, res = response) => {
-    const producto = new Producto(req.body);
-    try {
-        await producto.save();
-        res.json({
-            ok: true,
-            producto
-        });
-    } catch (error) {
-        res.status(500).json({
-            ok: false,
-            msg: 'Error',
-            error
-        });
-    }
-}
-
+  res.json({
+    ok: true,
+    msg: 'Producto creado',
+  });
+};
 
 const getProductos = async (req, res = response) => {
-    try {
-        const productos = await Producto.find();
-        res.json({
-            ok: true,
-            productos
-        });
-    } catch (error) {
-        res.status(500).json({
-            ok: false,
-            msg: 'Error',
-            error
-        });
-    }
-}
+  res.json({
+    ok: true,
+    msg: 'Productos',
+  });
+};
 
-
-const deleteProdcuto = async (req, res = response) => {
-    const id = req.params.id;
-    try {
-        const producto = await Producto.findByIdAndDelete(id);
-        res.json({
-            ok: true,
-            producto
-        });
-    } catch (error) {
-        res.status(500).json({
-            ok: false,
-            msg: 'Error',
-            error
-        });
-    }
-}
+const deleteProducto = async (req, res = response) => {
+  res.json({
+    ok: true,
+    msg: 'Producto eliminado',
+  });
+};
 
 module.exports = {
-    crearProducto,
-    getProductos,
-    deleteProdcuto
-}
+  crearProducto,
+  getProductos,
+  deleteProducto,
+};

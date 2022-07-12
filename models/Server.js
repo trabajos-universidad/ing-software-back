@@ -7,8 +7,11 @@ class Server {
         this.port = process.env.PORT || 3000;
         this.path = {
             auth: '/auth',
-            products: '/products',
+            products: '/productos',
         }
+
+        this.middlewares();
+        this.routes();
     }
 
     middlewares() {
@@ -18,8 +21,8 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.path.auth, require('./routes/auth'));
-        this.app.use(this.path.products, require('./routes/products'));
+        this.app.use(this.path.auth, require('../routes/auth'));
+        this.app.use(this.path.products, require('../routes/productos'));
     }
     
     listen() {

@@ -1,9 +1,11 @@
 const { Router } = require('express');
-const { getProductos, crearProducto, deleteProdcuto } = require('../controller/productos');
+const { getProductos, crearProducto, deleteProducto } = require('../controller/productos');
 const router = Router();
 
 router.get('/', getProductos)
 
-router.post('/auth', crearProducto)
+router.post('/crear-productos', crearProducto)
 
-router.delete('/auth', deleteProducto);
+router.delete('/eliminar-productos', deleteProducto);
+
+module.exports = router;
