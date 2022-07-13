@@ -10,7 +10,7 @@ const productoSchema = new Schema({
         type: String,
         required: true,
     },
-    descripcion: {
+    desc: {
         type: String,
         required: true,
     }
