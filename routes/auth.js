@@ -13,7 +13,7 @@ router.post ('/register', [
 ], register);
 
 router.post('/', [
-    check('email', 'El email es obligatorio').not().isEmpty(),
+    check('email', 'El enmail es obligatorio').not().isEmpty(),
     check('password', 'La contraseña es obligatoria').not().isEmpty(),
     validarCampos
 ],login);
