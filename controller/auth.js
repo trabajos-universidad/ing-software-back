@@ -66,6 +66,11 @@ const register = async (req, res = response) => {
   usuario.password = bcrypt.hashSync(password, salt);
 
   try {
+
+    console.log(usuario);
+    if (usuario.email){
+
+    }
     await usuario.save();
     console.log(usuario);
     const token = await generarJWT(usuario.id);
